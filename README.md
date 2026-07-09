@@ -9,7 +9,6 @@
 
 Built with a soft feminine editorial aesthetic inspired by Apple, Framer, Linear and luxury boutique design. Focused on **whitespace, typography and the projects themselves** — not busy dashboards or corporate templates.
 
-![Preview](./public/images/hero-portrait.jpg)
 
 ---
 
