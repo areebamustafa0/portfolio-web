@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #fffcfd;
+  --color-card: #ffffff;
+  
+  /* The new deep luxurious purple palette */
+  --color-primary: #500e61;
+  --color-primary-light: #ab48c2;
+  --color-accent: #eb8ae3;
+  --color-deep-purple: #4e0a73;
+  --color-muted-purple: #9c78b0;
+  --color-royal-purple: #9c4da1;
+  --color-rich-magenta: #a14d9a;
+
+  --color-lavender: #f8f4ff;
+  --color-text: #1a0a20;
+  --color-text-secondary: #6b5376;
+  --color-border: #f0e6f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(171, 72, 194, 0.08), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(235, 138, 227, 0.1), transparent 40%),
+    var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-purple);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-deep-purple);
+}
+
+/* Selection */
+::selection {
+  background-color: #eb8ae3;
+  color: white;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
