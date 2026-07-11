@@ -276,14 +276,12 @@ function Navbar() {
           
 
           <div className="hidden md:block">
-            <SecondaryButton
-             href="https://www.linkedin.com/in/areeba-mustafa-42a50a376/"
-             className="px-5 py-2.5 text-[14px]"
-             target="_blank"
-             rel="noopener noreferrer"
+          <SecondaryButton
+            href="https://www.linkedin.com/in/areeba-mustafa-42a50a376/"
+            className="px-5 py-2.5 text-[14px]"
            >
-              Let's Connect
-           </SecondaryButton>
+           Let's Connect
+          </SecondaryButton>
           </div>
 
           {/* Mobile toggle */}
