@@ -50,7 +50,7 @@ const projects = [
     name: "Petpedia Pearl",
     description: "Pet Management Platform",
     tech: ["React", "Node.js", "PostgreSQL"],
-    image: "/projects/petpedia.jpg",
+    image: "/projects/petpedia.webp",
     demo: "https://petpedia-pearl.vercel.app/",
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     name: "Productivity Hub",
     description: "Task Management System",
     tech: ["React", "Node.js", "Tailwind CSS"],
-    image: "/projects/productivity.jpg",
+    image: "/projects/productivity.webp",
     demo: "https://productivityhub-neon.vercel.app/",
   },
   {
@@ -66,7 +66,7 @@ const projects = [
     name: "Lingua Learn Hub",
     description: "Language Learning Platform",
     tech: ["React", "Express.js", "MongoDB"],
-    image: "/projects/lingua.jpg",
+    image: "/projects/lingua.webp",
     demo: "https://lingua-learn-hub.vercel.app/",
   },
   {
@@ -74,7 +74,7 @@ const projects = [
     name: "Smart Games Suite Pro",
     description: "Interactive Browser Games",
     tech: ["React", "JavaScript", "Tailwind CSS"],
-    image: "/projects/games.jpg",
+    image: "/projects/games.webp",
     demo: "https://smart-games-suite-pro.vercel.app/",
   },
   {
@@ -82,7 +82,7 @@ const projects = [
     name: "Multimodal Sentiment Analysis",
     description: "AI Emotion Detection Platform",
     tech: ["Python", "FastAPI", "Machine Learning"],
-    image: "/projects/sentiment.jpg",
+    image: "/projects/sentiment.webp",
     demo: "#",
     unavailable: true,
   },
@@ -273,12 +273,17 @@ function Navbar() {
               </li>
             ))}
           </ul>
+          
 
           <div className="hidden md:block">
-            <SecondaryButton href="/resume.pdf" className="px-5 py-2.5 text-[14px]" download>
-              <Download className="h-4 w-4" />
-              Resume
-            </SecondaryButton>
+            <SecondaryButton
+             href="https://www.linkedin.com/in/areeba-mustafa-42a50a376/"
+             className="px-5 py-2.5 text-[14px]"
+             target="_blank"
+             rel="noopener noreferrer"
+           >
+              Let's Connect
+           </SecondaryButton>
           </div>
 
           {/* Mobile toggle */}
@@ -442,7 +447,10 @@ function Hero() {
             {/* Image */}
             <div className="relative h-[380px] w-[380px] lg:h-[460px] lg:w-[460px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
               <img
-                src="/images/hero-portrait.jpg"
+                src="/images/hero-portrait.webp"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 alt="Areeba Mustafa"
                 className="h-full w-full object-cover object-center"
               />
@@ -526,7 +534,7 @@ function ProjectRow({
         {/* Number */}
         <div className="flex lg:flex-col items-center lg:items-start gap-4">
           <span
-            className="font-serif font-medium text-primary/20 group-hover:text-primary/60 transition-colors duration-500"
+            className="font-serif font-medium text-primary/50 group-hover:text-primary/60 transition-colors duration-500"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(40px, 5vw, 64px)",
@@ -544,7 +552,9 @@ function ProjectRow({
               src={project.image}
               alt={project.name}
               className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
         </div>
@@ -615,7 +625,10 @@ function AboutSection() {
             <div className="absolute inset-0 m-auto h-[300px] w-[300px] rounded-full bg-gradient-to-br from-lavender via-light-purple to-primary/30 blur-sm" />
             <div className="relative h-[260px] w-[260px] overflow-hidden rounded-full border-[7px] border-white shadow-[0_18px_42px_-18px_rgba(139,92,246,0.34)] md:h-[320px] md:w-[320px]">
               <img
-                src="/images/about-portrait.png"
+                src="/images/about-portrait.webp"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 alt="Areeba Mustafa"
                 className="h-full w-full object-cover"
               />
@@ -797,7 +810,7 @@ function Contact() {
   return (
     <section id="contact" className="relative py-32 px-6">
       <div className="mx-auto max-w-[1280px]">
-        <div className="relative overflow-hidden rounded-[32px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-10 md:p-16 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
+        <div className="relative overflow-visible rounded-[32px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-10 md:p-16 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
           {/* Decorative florals */}
           <svg
             className="absolute right-6 bottom-4 h-36 w-36 text-primary/25 hidden md:block"
@@ -917,7 +930,7 @@ function ContactItem({
 function Footer() {
   return (
     <footer className="px-6 pb-8">
-      <div className="mx-auto max-w-[1280px] overflow-hidden rounded-[32px] border border-[#f0e6f5] bg-white shadow-[0_-8px_40px_-20px_rgba(80,14,97,0.12)]">
+      <div className="mx-auto max-w-[1280px] rounded-[32px] borderborder-[#f0e6f5] bg-white shadow-[0_-8px_40px_-20px_rgba(80,14,97,0.12)]">
         {/* Top row */}
         <div className="grid gap-10 border-b border-[#f0e6f5] px-8 py-12 md:grid-cols-[1.4fr_1fr_1fr] md:px-14">
           {/* Brand */}
