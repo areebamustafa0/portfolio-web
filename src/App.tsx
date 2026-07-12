@@ -129,7 +129,7 @@ function Logo() {
         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
       </div>
       <div className="flex flex-col leading-none">
-        <span className="font-serif text-lg font-bold tracking-tight text-[#500e61]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+        <span className="truncate font-serif text-lg font-bold tracking-tight text-[#500e61]" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
           Areeba Mustafa
         </span>
         <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#9c78b0]">
@@ -239,12 +239,12 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 ${
         scrolled ? "py-3" : "py-5"
       }`}
     >
       <nav
-        className={`mx-auto max-w-[1280px] px-6 transition-all duration-500 ${
+        className={`mx-auto w-full max-w-7xl px-4 sm:px-6 transition-all duration-500 ${
           scrolled
             ? "rounded-[20px] border border-[#f0e6f5] bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_-8px_rgba(80,14,97,0.08)] py-3 px-6"
             : ""
@@ -335,35 +335,35 @@ function Navbar() {
 function Hero() {
   return (
     <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden pt-32 pb-20 px-6"
+       id="home"
+       className="relative min-h-screen flex items-center overflow-x-clip pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6"
     >
       {/* Decorative background blobs */}
-      <div className="absolute -left-32 top-40 h-80 w-80 rounded-full bg-gradient-to-br from-light-purple to-primary/20 blur-3xl opacity-70" />
-      <div className="absolute -right-32 -top-20 h-96 w-96 rounded-full bg-gradient-to-br from-lavender to-light-purple/50 blur-3xl opacity-60" />
-      <div className="absolute right-10 bottom-10 h-64 w-64 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl" />
+      <div className="absolute -left-40 top-40 hidden h-80 w-80 rounded-full bg-gradient-to-br from-light-purple to-primary/20 blur-3xl opacity-70 lg:block" />
+      <div className="absolute -right-40 -top-20 hidden h-96 w-96 rounded-full bg-gradient-to-br from-lavender to-light-purple/50 blur-3xl opacity-60 lg:block" />
+      <div className="absolute bottom-10 right-10 hidden h-64 w-64 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl lg:block" />
 
       {/* Decorative dots (top right) */}
-      <div className="absolute right-10 top-32 hidden lg:grid grid-cols-5 gap-1.5 opacity-40">
+      <div className="absolute right-10 top-32 hidden xl:grid grid-cols-5 gap-1.5 opacity-40">
         {Array.from({ length: 15 }).map((_, i) => (
           <span key={i} className="block h-1 w-1 rounded-full bg-primary/30" />
         ))}
       </div>
 
       {/* Decorative dots (top left) */}
-      <div className="absolute left-10 top-40 hidden lg:grid grid-cols-4 gap-1.5 opacity-40">
+      <div className="absolute left-10 top-40 hidden xl:grid grid-cols-4 gap-1.5 opacity-40">
         {Array.from({ length: 20 }).map((_, i) => (
           <span key={i} className="block h-1.5 w-1.5 rounded-full bg-primary/20" />
         ))}
       </div>
 
       {/* Sparkles */}
-      <Sparkles className="absolute right-[32%] top-[22%] h-5 w-5 text-primary/50 sparkle hidden lg:block" />
-      <Sparkles className="absolute right-[22%] top-[30%] h-4 w-4 text-light-purple/80 sparkle sparkle-delay-1 hidden lg:block" />
-      <Sparkles className="absolute left-[32%] top-[28%] h-3 w-3 text-primary/60 sparkle sparkle-delay-2 hidden lg:block" />
-      <Sparkles className="absolute left-[22%] bottom-[25%] h-4 w-4 text-light-purple/70 sparkle sparkle-delay-3 hidden lg:block" />
+      <Sparkles className="absolute right-[32%] top-[22%] h-5 w-5 text-primary/50 sparkle hidden xl:block" />
+      <Sparkles className="absolute right-[22%] top-[30%] h-4 w-4 text-light-purple/80 sparkle sparkle-delay-1 hidden xl:block" />
+      <Sparkles className="absolute left-[32%] top-[28%] h-3 w-3 text-primary/60 sparkle sparkle-delay-2 hidden xl:block" />
+      <Sparkles className="absolute left-[22%] bottom-[25%] h-4 w-4 text-light-purple/70 sparkle sparkle-delay-3 hidden xl:block" />
 
-      <div className="relative mx-auto max-w-[1280px] w-full grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative mx-auto max-w-7xl w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Left */}
         <div className="order-2 lg:order-1">
           <SectionLabel>Hello, I'm</SectionLabel>
@@ -413,16 +413,18 @@ function Hero() {
 
         {/* Right - portrait */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-          <div className="relative float">
+        <div className=" relative float h-[320px] w-[320px] md:h-[380px] md:w-[380px] lg:h-[530px] lg:w-[530px] flex items-center justify-center "
+>
             {/* Gradient circle behind */}
-            <div className="absolute inset-0 m-auto h-[420px] w-[420px] lg:h-[500px] lg:w-[500px] rounded-full bg-gradient-to-br from-lavender via-light-purple to-primary/25" />
+            <div className="absolute inset-0 m-auto  h-[300px] w-[300px]  md:h-[360px] md:w-[360px]  lg:h-[470px] lg:w-[470px] rounded-full bg-gradient-to-br from-lavender via-light-purple to-primary/25"
+/>
             {/* Thin ring */}
-            <div className="absolute inset-0 m-auto h-[460px] w-[460px] lg:h-[540px] lg:w-[540px] rounded-full border border-primary/15" />
-            <div className="absolute inset-0 m-auto h-[500px] w-[500px] lg:h-[580px] lg:w-[580px] rounded-full border border-dashed border-primary/10" />
+            <div className="absolute inset-0 m-auto hidden xl:block h-[490px] w-[490px] rounded-full border border-primary/15" />
+            <div className="absolute inset-0 m-auto hidden xl:block h-[580px] w-[580px] rounded-full border border-dashed border-primary/10" />
 
             {/* Floral decorative branch */}
             <svg
-              className="absolute -right-8 -bottom-6 h-40 w-40 text-primary/30 hidden lg:block"
+              className="absolute right-6 bottom-2 h-40 w-40 text-primary/30 hidden xl:block"
               viewBox="0 0 200 200"
               fill="none"
               stroke="currentColor"
@@ -443,7 +445,11 @@ function Hero() {
             </svg>
 
             {/* Image */}
-            <div className="relative h-[380px] w-[380px] lg:h-[460px] lg:w-[460px] overflow-hidden rounded-full border-[6px] border-white shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
+            <div className="relative
+                     h-[320px] w-[320px]
+                     md:h-[380px] md:w-[380px] 
+                     lg:h-[440px] lg:w-[440px]
+                    overflow-hidden rounded-full border-[6px] border-white shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
               <img
                 src="/images/hero-portrait.webp"
                 fetchPriority="high"
@@ -456,7 +462,7 @@ function Hero() {
 
             {/* Curved arrow pointing down */}
             <svg
-              className="absolute -left-12 -bottom-8 h-12 w-12 text-primary/50 hidden lg:block"
+              className="absolute -left-3 bottom-4 h-12 w-12 text-primary/50 hidden xl:block"
               viewBox="0 0 100 100"
               fill="none"
               stroke="currentColor"
@@ -482,7 +488,7 @@ function Hero() {
 function Projects() {
   return (
     <section id="projects" className="relative py-32 px-6">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <SectionLabel>Featured Projects</SectionLabel>
@@ -528,7 +534,7 @@ function ProjectRow({
     <article
       className="group relative rounded-[24px] border border-[#f0e6f5] bg-white p-6 md:p-8 shadow-[0_4px_24px_-8px_rgba(80,14,97,0.06)] transition-all duration-500 hover:shadow-[0_24px_48px_-12px_rgba(80,14,97,0.12)] hover:border-[#ab48c2]/30"
     >
-      <div className="grid lg:grid-cols-[auto_1fr_auto] gap-8 lg:gap-10 items-center">
+      <div className="grid xl:grid-cols-[auto_1fr_auto] gap-8 lg:gap-10 items-center">
         {/* Number */}
         <div className="flex lg:flex-col items-center lg:items-start gap-4">
           <span
@@ -545,7 +551,7 @@ function ProjectRow({
 
         {/* Screenshot */}
         <div className="overflow-hidden rounded-2xl border border-border bg-lavender/20 group-hover:border-primary/20 transition-all duration-500">
-          <div className="aspect-[16/9] overflow-hidden">
+          <div className="aspect-video overflow-hidden rounded-xl">
             <img
               src={project.image}
               alt={project.name}
@@ -617,11 +623,15 @@ function ProjectRow({
 function AboutSection() {
   return (
     <section id="about" className="relative py-32 px-6">
-      <div className="mx-auto max-w-[1280px]">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center rounded-[36px] border border-border bg-white p-8 md:p-12 lg:p-16 shadow-[0_2px_30px_-12px_rgba(139,92,246,0.1)]">
-          <div className="relative flex justify-center lg:justify-start">
-            <div className="absolute inset-0 m-auto h-[300px] w-[300px] rounded-full bg-gradient-to-br from-lavender via-light-purple to-primary/30 blur-sm" />
-            <div className="relative h-[260px] w-[260px] overflow-hidden rounded-full border-[7px] border-white shadow-[0_18px_42px_-18px_rgba(139,92,246,0.34)] md:h-[320px] md:w-[320px]">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-20 items-center rounded-[36px] border border-border bg-white p-8 md:p-12 lg:p-16 shadow-[0_2px_30px_-12px_rgba(139,92,246,0.1)]">
+          <div className="relative flex justify-center">
+          <div className="absolute inset-0 m-auto h-[300px] w-[300px] md:h-[360px] md:w-[360px] lg:h-[340px] lg:w-[340px] rounded-full bg-gradient-to-br from-lavender via-light-purple to-primary/30 blur-sm" />
+            <div className="relative h-[220px] w-[220px]
+                               sm:h-[260px] sm:w-[260px]
+                               md:h-[300px] md:w-[300px]
+                               lg:h-[320px] lg:w-[320px]
+            overflow-hidden rounded-full border-[7px] border-white shadow-[0_18px_42px_-18px_rgba(139,92,246,0.34)] ">
               <img
                 src="/images/about-portrait.webp"
                 fetchPriority="high"
@@ -632,7 +642,7 @@ function AboutSection() {
               />
             </div>
             <svg
-              className="absolute bottom-2 left-1/2 h-24 w-24 -translate-x-[120%] text-primary/30 md:bottom-6"
+              className="absolute -bottom-4 left-6 h-20 w-20 text-primary/25 hidden lg:block"
               viewBox="0 0 120 120"
               fill="none"
             >
@@ -706,7 +716,7 @@ function AboutSection() {
 function TechStackSection() {
   return (
     <section id="stack" className="relative py-32 px-6">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel>Tech Stack</SectionLabel>
           <h2
@@ -807,8 +817,8 @@ function TechCard({ name }: { name: string }) {
 function Contact() {
   return (
     <section id="contact" className="relative py-32 px-6">
-      <div className="mx-auto max-w-[1280px]">
-        <div className="relative overflow-visible rounded-[32px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-10 md:p-16 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative overflow-hidden rounded-[32px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-10 md:p-16 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
           {/* Decorative florals */}
           <svg
             className="absolute right-6 bottom-4 h-36 w-36 text-primary/25 hidden md:block"
@@ -928,7 +938,7 @@ function ContactItem({
 function Footer() {
   return (
     <footer className="px-6 pb-8">
-      <div className="mx-auto max-w-[1280px] rounded-[32px] borderborder-[#f0e6f5] bg-white shadow-[0_-8px_40px_-20px_rgba(80,14,97,0.12)]">
+      <div className="mx-auto max-w-7xl rounded-[32px] border border-[#f0e6f5] bg-white shadow-[0_-8px_40px_-20px_rgba(80,14,97,0.12)]">
         {/* Top row */}
         <div className="grid gap-10 border-b border-[#f0e6f5] px-8 py-12 md:grid-cols-[1.4fr_1fr_1fr] md:px-14">
           {/* Brand */}
@@ -1060,7 +1070,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-bg font-sans text-text overflow-x-hidden">
+    <div className="relative min-h-screen bg-bg font-sans text-text overflow-x-clip">
       <Navbar />
       <main>
         <Hero />
