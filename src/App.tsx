@@ -336,7 +336,7 @@ function Hero() {
   return (
     <section
        id="home"
-       className="relative min-h-screen flex items-center overflow-x-clip pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6"
+       className="relative min-h-[90vh] flex items-center overflow-x-clip pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6"
     >
       {/* Decorative background blobs */}
       <div className="absolute -left-40 top-40 hidden h-80 w-80 rounded-full bg-gradient-to-br from-light-purple to-primary/20 blur-3xl opacity-70 lg:block" />
@@ -487,7 +487,7 @@ function Hero() {
 
 function Projects() {
   return (
-    <section id="projects" className="relative py-32 px-6">
+    <section id="projects" className="relative py-16 lg:py-28 px-6">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
@@ -622,7 +622,7 @@ function ProjectRow({
 
 function AboutSection() {
   return (
-    <section id="about" className="relative py-32 px-6">
+    <section id="about" className="relative py-16 lg:py-28 px-6">
       <div className="mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-20 items-center rounded-[36px] border border-border bg-white p-8 md:p-12 lg:p-16 shadow-[0_2px_30px_-12px_rgba(139,92,246,0.1)]">
           <div className="relative flex justify-center">
@@ -715,7 +715,7 @@ function AboutSection() {
 
 function TechStackSection() {
   return (
-    <section id="stack" className="relative py-32 px-6">
+    <section id="stack" className="relative py-16 lg:py-28 px-6">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <SectionLabel>Tech Stack</SectionLabel>
@@ -816,7 +816,7 @@ function TechCard({ name }: { name: string }) {
 
 function Contact() {
   return (
-    <section id="contact" className="relative py-32 px-6">
+    <section id="contact" className="relative py-16 lg:py-28 px-6 scroll-mt-32">
       <div className="mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-[32px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-10 md:p-16 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
           {/* Decorative florals */}
@@ -912,7 +912,7 @@ function ContactItem({
         <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-text-secondary">
           {label}
         </p>
-        <p className="text-[14px] md:text-[15px] font-medium text-text truncate">
+        <p className="text-[14px] md:text-[15px] font-medium text-text break-all">
           {value}
         </p>
       </div>
@@ -1070,7 +1070,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-bg font-sans text-text overflow-x-clip">
+    <div className="relative min-h-[90vh] bg-bg font-sans text-text overflow-x-clip">
       <Navbar />
       <main>
         <Hero />
