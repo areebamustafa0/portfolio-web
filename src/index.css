@@ -22,7 +22,9 @@
   --color-border: #f0e6f5;
 }
 
-html,
+html{
+  scroll-behavior:smooth;
+  }
 body {
   width: 100%;
   overflow-x: hidden;
@@ -97,3 +99,19 @@ img {
   max-width: 100%;
   height: auto;
 }
+::-webkit-scrollbar{
+  width:10px;
+  }
+  
+  ::-webkit-scrollbar-track{
+  background:#faf6ff;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+  background:#ce93c9;
+  border-radius:20px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover{
+  background:#9e49c5;
+  }

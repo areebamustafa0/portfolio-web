@@ -160,7 +160,7 @@ function PrimaryButton({
   onClick?: () => void;
   className?: string;
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full bg-[#500e61] px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_10px_20px_-5px_rgba(80,14,97,0.3)] transition-all duration-300 hover:bg-[#4e0a73] hover:shadow-[0_15px_25px_-5px_rgba(80,14,97,0.4)] hover:-translate-y-0.5 ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full bg-[#500e61] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_20px_-5px_rgba(80,14,97,0.3)] transition-all duration-500 ease-out hover:bg-[#4e0a73] hover:shadow-[0_15px_25px_-5px_rgba(80,14,97,0.4)] hover:-translate-y-0.5 ${className}`;
   if (href) {
     return (
       <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className={classes}>
@@ -188,7 +188,7 @@ function SecondaryButton({
   download?: boolean;
   className?: string;
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full border border-[#9c78b0]/30 bg-white px-7 py-3.5 text-[15px] font-semibold text-[#500e61] transition-all duration-300 hover:border-[#500e61] hover:bg-[#f8f4ff] hover:-translate-y-0.5 ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full border border-[#9c78b0]/30 bg-white px-8 py-4 text-[15px] font-semibold text-[#500e61] transition-all duration-500 ease-out hover:border-[#500e61] hover:bg-[#f8f4ff] hover:-translate-y-0.5 ${className}`;
   if (href) {
     return (
       <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" download={download} className={classes}>
@@ -254,12 +254,12 @@ function Navbar() {
           <Logo />
 
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-10">
+          <ul className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`relative text-[15px] font-medium transition-colors duration-300 ${
+                  className={`relative text-[16px] font-medium transition-colors duration-300 ${
                     activeSection === link.href.replace("#", "")
                       ? "text-primary"
                       : "text-text-secondary hover:text-text"
@@ -335,40 +335,43 @@ function Navbar() {
 function Hero() {
   return (
     <section
+    
        id="home"
        className="relative min-h-[90vh] flex items-center overflow-x-clip pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6"
     >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(181,79,201,0.08),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(235,138,227,0.08),transparent_40%)] pointer-events-none" />
       {/* Decorative background blobs */}
       <div className="absolute -left-40 top-40 hidden h-80 w-80 rounded-full bg-gradient-to-br from-light-purple to-primary/20 blur-3xl opacity-70 lg:block" />
       <div className="absolute -right-40 -top-20 hidden h-96 w-96 rounded-full bg-gradient-to-br from-lavender to-light-purple/50 blur-3xl opacity-60 lg:block" />
       <div className="absolute bottom-10 right-10 hidden h-64 w-64 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl lg:block" />
 
       {/* Decorative dots (top right) */}
-      <div className="absolute right-10 top-32 hidden xl:grid grid-cols-5 gap-1.5 opacity-40">
+        <div className="absolute right-10 top-32 hidden lg:grid grid-cols-5 gap-1.5 opacity-40">
         {Array.from({ length: 15 }).map((_, i) => (
           <span key={i} className="block h-1 w-1 rounded-full bg-primary/30" />
         ))}
       </div>
 
       {/* Decorative dots (top left) */}
-      <div className="absolute left-10 top-40 hidden xl:grid grid-cols-4 gap-1.5 opacity-40">
+      <div className="absolute left-10 top-40 hidden lg:grid grid-cols-4 gap-1.5 opacity-40">
         {Array.from({ length: 20 }).map((_, i) => (
           <span key={i} className="block h-1.5 w-1.5 rounded-full bg-primary/20" />
         ))}
       </div>
+    
 
       {/* Sparkles */}
-      <Sparkles className="absolute right-[32%] top-[22%] h-5 w-5 text-primary/50 sparkle hidden xl:block" />
-      <Sparkles className="absolute right-[22%] top-[30%] h-4 w-4 text-light-purple/80 sparkle sparkle-delay-1 hidden xl:block" />
-      <Sparkles className="absolute left-[32%] top-[28%] h-3 w-3 text-primary/60 sparkle sparkle-delay-2 hidden xl:block" />
-      <Sparkles className="absolute left-[22%] bottom-[25%] h-4 w-4 text-light-purple/70 sparkle sparkle-delay-3 hidden xl:block" />
+      <Sparkles className="absolute right-[32%] top-[22%] h-5 w-5 text-primary/50 sparkle hidden lg:block" />
+      <Sparkles className="absolute right-[22%] top-[30%] h-4 w-4 text-light-purple/80 sparkle sparkle-delay-1 hidden lg:block" />
+      <Sparkles className="absolute left-[32%] top-[28%] h-3 w-3 text-primary/60 sparkle sparkle-delay-2 hidden lg:block" />
+      <Sparkles className="absolute left-[32%] bottom-[24%] h-4 w-4 text-light-purple/70 sparkle sparkle-delay-3 hidden lg:block" />
 
-      <div className="relative mx-auto max-w-7xl w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="relative mx-auto max-w-7xl w-full grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
         {/* Left */}
         <div className="order-2 lg:order-1">
           <SectionLabel>Hello, I'm</SectionLabel>
           <h1
-            className="mt-5 font-serif font-medium leading-[0.95] tracking-tight text-text"
+            className="mt-5 font-serif font-semibold leading-[0.95] tracking-tight text-text"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "clamp(48px, 8vw, 88px)",
@@ -391,7 +394,7 @@ function Hero() {
           </div>
 
           <p
-            className="mt-6 max-w-md text-[17px] leading-[1.7] text-text-secondary"
+            className="mt-6 max-w-xl text-[17px] leading-[1.7] text-text-secondary"
             style={{ fontSize: "clamp(15px, 1.5vw, 18px)" }}
           >
             Full Stack Developer crafting clean, elegant and responsive web
@@ -413,18 +416,23 @@ function Hero() {
 
         {/* Right - portrait */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-        <div className=" relative float h-[320px] w-[320px] md:h-[380px] md:w-[380px] lg:h-[530px] lg:w-[530px] flex items-center justify-center "
+        <div className=" relative float h-[320px] w-[320px] md:h-[380px] md:w-[380px] lg:h-[520px] lg:w-[520px] flex items-center justify-center "
 >
             {/* Gradient circle behind */}
-            <div className="absolute inset-0 m-auto  h-[300px] w-[300px]  md:h-[360px] md:w-[360px]  lg:h-[470px] lg:w-[470px] rounded-full bg-gradient-to-br from-lavender via-light-purple to-primary/25"
-/>
+            <div className="absolute inset-0 m-auto
+                             h-[310px] w-[310px]
+                             md:h-[380px] md:w-[380px]
+                             lg:h-[500px] lg:w-[500px]
+                             rounded-full
+                             bg-[radial-gradient(circle_at_center,#ffffff_0%,#fdf7ff_35%,#eddcff_70%,#d6b2ff_100%)]
+                             shadow-[0_0_120px_rgba(181,79,201,0.35)]" />
             {/* Thin ring */}
-            <div className="absolute inset-0 m-auto hidden xl:block h-[490px] w-[490px] rounded-full border border-primary/15" />
-            <div className="absolute inset-0 m-auto hidden xl:block h-[580px] w-[580px] rounded-full border border-dashed border-primary/10" />
+            <div className="absolute inset-0 m-auto h-[460px] w-[460px] lg:h-[540px] lg:w-[540px] rounded-full border border-primary/15" />
+            <div className="absolute inset-0 m-auto h-[500px] w-[500px] lg:h-[580px] lg:w-[580px] rounded-full border border-dashed border-primary/10" />
 
             {/* Floral decorative branch */}
             <svg
-              className="absolute right-6 bottom-2 h-40 w-40 text-primary/30 hidden xl:block"
+              className="absolute -right-8 -bottom-6 h-40 w-40 text-primary/30 hidden lg:block"
               viewBox="0 0 200 200"
               fill="none"
               stroke="currentColor"
@@ -445,19 +453,17 @@ function Hero() {
             </svg>
 
             {/* Image */}
-            <div className="relative
-                     h-[320px] w-[320px]
-                     md:h-[380px] md:w-[380px] 
-                     lg:h-[440px] lg:w-[440px]
-                    overflow-hidden rounded-full border-[6px] border-white shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
+            <div className="absolute h-[470px] w-[470px] rounded-full bg-[#eb8ae3]/20 blur-[90px] -translate-y-2" />
+            <div className="relative -translate-x-5 h-[380px] w-[380px] lg:h-[460px] lg:w-[460px] overflow-hidden rounded-full border-[3px] border-white shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
               <img
                 src="/images/hero-portrait.webp"
                 fetchPriority="high"
                 loading="eager"
                 decoding="async"
                 alt="Areeba Mustafa"
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover object-[42%_center]"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-white/0 to-white/25 pointer-events-none" />
             </div>
 
             {/* Curved arrow pointing down */}
@@ -532,7 +538,7 @@ function ProjectRow({
 }) {
   return (
     <article
-      className="group relative rounded-[24px] border border-[#f0e6f5] bg-white p-6 md:p-8 shadow-[0_4px_24px_-8px_rgba(80,14,97,0.06)] transition-all duration-500 hover:shadow-[0_24px_48px_-12px_rgba(80,14,97,0.12)] hover:border-[#ab48c2]/30"
+      className="group relative rounded-[30px] border border-[#f0e6f5] bg-white p-8 md:p-10 shadow-[0_4px_24px_-8px_rgba(80,14,97,0.06)] transition-all duration-500 hover:shadow-[0_30px_70px_-12px_rgba(181,79,201,0.22)] hover:border-[#ab48c2]/30"
     >
       <div className="grid xl:grid-cols-[auto_1fr_auto] gap-8 lg:gap-10 items-center">
         {/* Number */}
@@ -555,7 +561,7 @@ function ProjectRow({
             <img
               src={project.image}
               alt={project.name}
-              className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+              className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -604,7 +610,7 @@ function ProjectRow({
               href={project.demo}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-5 py-2.5 text-[14px] font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_6px_20px_-6px_rgba(139,92,246,0.5)]"
+              className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white px-5 py-2.5 text-[14px] font-medium text-primary transition-all duration-500 ease-out hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_6px_20px_-6px_rgba(139,92,246,0.5)]"
             >
               Live Demo
               <ExternalLink className="h-3.5 w-3.5" />
@@ -631,7 +637,7 @@ function AboutSection() {
                                sm:h-[260px] sm:w-[260px]
                                md:h-[300px] md:w-[300px]
                                lg:h-[320px] lg:w-[320px]
-            overflow-hidden rounded-full border-[7px] border-white shadow-[0_18px_42px_-18px_rgba(139,92,246,0.34)] ">
+            overflow-hidden rounded-full border-[4px] border-white shadow-[0_18px_42px_-18px_rgba(139,92,246,0.34)] ">
               <img
                 src="/images/about-portrait.webp"
                 fetchPriority="high"
@@ -753,7 +759,7 @@ function InfoCard({
   lines: string[];
 }) {
   return (
-    <div className="group rounded-2xl border border-border bg-bg/50 p-5 transition-all duration-300 hover:border-primary/20 hover:bg-lavender/30 hover:shadow-[0_6px_20px_-10px_rgba(139,92,246,0.25)]">
+    <div className="group rounded-2xl border border-border bg-bg/50 p-5 transition-all duration-500 ease-out hover:border-primary/20 hover:bg-lavender/30 hover:shadow-[0_6px_20px_-10px_rgba(139,92,246,0.25)]">
       <div className="flex items-start gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-lavender to-light-purple text-primary">
           {icon}
@@ -795,11 +801,11 @@ function TechCard({ name }: { name: string }) {
   const tech = techLogos[name];
   const Icon = tech.Icon;
   return (
-    <div className="group relative flex min-h-[130px] flex-col items-center justify-center gap-3 rounded-[16px] border border-[#f0e6f5] bg-white px-3 py-5 transition-all duration-500 cursor-default hover:border-[#ab48c2]/30 hover:shadow-[0_12px_24px_-10px_rgba(80,14,97,0.15)] hover:-translate-y-1.5">
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#fcf9ff] border border-[#f0e6f5] shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:shadow-md">
+    <div className="group relative flex min-h-[150px] flex-col items-center justify-center gap-3 rounded-[16px] border border-[#f0e6f5] bg-white px-3 py-5 transition-all duration-500 cursor-default hover:border-[#ab48c2]/30 hover:shadow-[0_12px_24px_-10px_rgba(80,14,97,0.15)] hover:-translate-y-1.5">
+      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#fcf9ff] border border-[#f0e6f5] shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:shadow-md">
         <Icon
           aria-hidden="true"
-          className="h-6 w-6 transition-colors duration-500"
+          className="h-8 w-8 transition-colors duration-500"
           style={{ color: tech.shade }}
         />
       </div>
@@ -818,7 +824,7 @@ function Contact() {
   return (
     <section id="contact" className="relative py-16 lg:py-28 px-6 scroll-mt-32">
       <div className="mx-auto max-w-7xl">
-        <div className="relative overflow-hidden rounded-[32px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-10 md:p-16 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
+        <div className="relative overflow-hidden rounded-[40px] border border-border bg-gradient-to-br from-white via-lavender/30 to-light-purple/20 p-12 md:p-20 shadow-[0_2px_30px_-10px_rgba(139,92,246,0.12)]">
           {/* Decorative florals */}
           <svg
             className="absolute right-6 bottom-4 h-36 w-36 text-primary/25 hidden md:block"
@@ -904,7 +910,7 @@ function ContactItem({
   href?: string;
 }) {
   const content = (
-    <div className="group flex items-center gap-4 rounded-2xl border border-border bg-white/80 backdrop-blur-sm p-4 transition-all duration-300 hover:border-primary/25 hover:bg-white hover:shadow-[0_8px_24px_-12px_rgba(139,92,246,0.3)] hover:-translate-y-0.5">
+    <div className="group flex items-center gap-4 rounded-2xl border border-border bg-white/80 backdrop-blur-sm p-4 transition-all duration-500 ease-out hover:border-primary/25 hover:bg-white hover:shadow-[0_8px_24px_-12px_rgba(139,92,246,0.3)] hover:-translate-y-0.5">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-lavender to-light-purple text-primary transition-colors duration-300 group-hover:from-primary group-hover:to-primary-dark group-hover:text-white">
         {icon}
       </div>
@@ -917,7 +923,7 @@ function ContactItem({
         </p>
       </div>
       {href && (
-        <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-primary/50 transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-primary/50 transition-all duration-500 ease-out group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       )}
     </div>
   );
@@ -938,7 +944,7 @@ function ContactItem({
 function Footer() {
   return (
     <footer className="px-6 pb-8">
-      <div className="mx-auto max-w-7xl rounded-[32px] border border-[#f0e6f5] bg-white shadow-[0_-8px_40px_-20px_rgba(80,14,97,0.12)]">
+      <div className="mx-auto max-w-7xl rounded-[40px] border border-[#f0e6f5] bg-white shadow-[0_-8px_40px_-20px_rgba(80,14,97,0.12)]">
         {/* Top row */}
         <div className="grid gap-10 border-b border-[#f0e6f5] px-8 py-12 md:grid-cols-[1.4fr_1fr_1fr] md:px-14">
           {/* Brand */}
@@ -952,7 +958,7 @@ function Footer() {
               <a
                 href="mailto:areebamustafa82@gmail.com"
                 aria-label="Email"
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#f0e6f5] bg-white text-[#6b5376] transition-all duration-300 hover:border-[#500e61]/30 hover:text-[#500e61] hover:-translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgba(80,14,97,0.2)]"
+                className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#f0e6f5] bg-white text-[#6b5376] transition-all duration-500 ease-out hover:border-[#500e61]/30 hover:text-[#500e61] hover:-translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgba(80,14,97,0.2)]"
               >
                 <Mail className="h-4 w-4" />
               </a>
@@ -961,7 +967,7 @@ function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#f0e6f5] bg-white text-[#6b5376] transition-all duration-300 hover:border-[#500e61]/30 hover:text-[#500e61] hover:-translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgba(80,14,97,0.2)]"
+                className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#f0e6f5] bg-white text-[#6b5376] transition-all duration-500 ease-out hover:border-[#500e61]/30 hover:text-[#500e61] hover:-translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgba(80,14,97,0.2)]"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -970,7 +976,7 @@ function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#f0e6f5] bg-white text-[#6b5376] transition-all duration-300 hover:border-[#500e61]/30 hover:text-[#500e61] hover:-translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgba(80,14,97,0.2)]"
+                className="group flex h-10 w-10 items-center justify-center rounded-full border border-[#f0e6f5] bg-white text-[#6b5376] transition-all duration-500 ease-out hover:border-[#500e61]/30 hover:text-[#500e61] hover:-translate-y-0.5 hover:shadow-[0_8px_16px_-4px_rgba(80,14,97,0.2)]"
               >
                 <Github className="h-4 w-4" />
               </a>
@@ -989,7 +995,7 @@ function Footer() {
                     href={link.href}
                     className="group inline-flex items-center gap-2 text-[14px] text-text-secondary transition-colors hover:text-primary"
                   >
-                    <span className="h-px w-3 bg-text-secondary/40 transition-all duration-300 group-hover:w-5 group-hover:bg-primary" />
+                    <span className="h-px w-3 bg-text-secondary/40 transition-all duration-500 ease-out group-hover:w-5 group-hover:bg-primary" />
                     {link.label}
                   </a>
                 </li>
@@ -1056,7 +1062,7 @@ function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-[0_8px_24px_-8px_rgba(139,92,246,0.5)] transition-all duration-300 hover:bg-primary-dark hover:-translate-y-1"
+      className="fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-[0_8px_24px_-8px_rgba(139,92,246,0.5)] transition-all duration-500 ease-out hover:bg-primary-dark hover:-translate-y-1"
       aria-label="Scroll to top"
     >
       <ArrowUp className="h-5 w-5" />
