@@ -416,12 +416,13 @@ function Hero() {
 
         {/* Right - portrait */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end px-4 lg:px-0">
-        <div className=" relative float h-[320px] w-[320px] md:h-[380px] md:w-[380px] lg:h-[520px] lg:w-[520px] flex items-center justify-center "
+        <div className=" relative floath-[300px] w-[300px] sm:h-[350px] sm:w-[350px] md:h-[420px] md:w-[420px] lg:h-[520px] lg:w-[520px] flex items-center justify-center "
 >
             {/* Gradient circle behind */}
             <div className="absolute inset-0 m-auto
-                             h-[310px] w-[310px]
-                             md:h-[380px] md:w-[380px]
+                             h-[300px] w-[300px]
+                             sm:h-[350px] sm:w-[350px]
+                             md:h-[420px] md:w-[420px]
                              lg:h-[500px] lg:w-[500px]
                              rounded-full
                              bg-[radial-gradient(circle_at_center,#ffffff_0%,#fdf7ff_35%,#eddcff_70%,#d6b2ff_100%)]
@@ -473,7 +474,15 @@ function Hero() {
 
             {/* Image */}
             <div className="absolute h-[470px] w-[470px] rounded-full bg-[#eb8ae3]/20 blur-[90px] -translate-y-2" />
-            <div className="relative translate-x-0 lg:-translate-x-5 h-[380px] w-[380px] lg:h-[460px] lg:w-[460px] overflow-hidden rounded-full border-[3px] border-white shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
+            <div className="relative
+  translate-x-0 lg:-translate-x-5
+  h-[280px] w-[280px]
+  sm:h-[330px] sm:w-[330px]
+  md:h-[380px] md:w-[380px]
+  lg:h-[460px] lg:w-[460px]
+  overflow-hidden rounded-full
+  border-[3px] border-white
+  shadow-[0_20px_60px_-15px_rgba(139,92,246,0.35)]">
               <img
                 src="/images/hero-portrait.webp"
                 fetchPriority="high"
