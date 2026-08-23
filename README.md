@@ -61,25 +61,6 @@ Built with a soft feminine editorial aesthetic inspired by Apple, Framer, Linear
 
 ---
 
-## 🚀 Getting Started
-
-```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
----
 
 ## 📁 Project Structure
 
@@ -102,7 +83,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ## 💌 Contact
 
 - **Email** — [areebamustafa82@gmail.com](mailto:areebamustafa82@gmail.com)
-- **LinkedIn** — [linkedin.com/in/areeba-mustafa-42a50a376](https://www.linkedin.com/in/areeba-mustafa-42a50a376/)
+- **LinkedIn** — [linkedin.com/in/areeba-mustafa-42a50a376](https://www.linkedin.com/in/areeba-mustafa0/)
 - **GitHub** — [github.com/areebamustafa0](https://github.com/areebamustafa0)
 - **Location** — Lahore, Punjab, Pakistan
 
